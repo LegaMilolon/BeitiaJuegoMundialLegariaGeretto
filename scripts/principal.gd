@@ -73,6 +73,7 @@ func _crear_pais(nombre, coordenadas):
 
 	var colision = CollisionPolygon2D.new()
 	colision.polygon = pts
+	colision.build_mode = CollisionPolygon2D.BUILD_SEGMENTS
 	nodo_pais.add_child(colision)
 
 	var linea = Line2D.new()
