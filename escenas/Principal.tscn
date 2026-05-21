@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c3x8m2p7n1q5"]
 
 [ext_resource type="Script" uid="uid://cvk65xhh1qpeh" path="res://scripts/principal.gd" id="1_ax3bz"]
-[ext_resource type="Script" uid="uid://57d3v5jnvu56" path="res://scripts/camara.gd" id="2_ty7qw"]
 [ext_resource type="Texture2D" uid="uid://ybprjyfe2vvl" path="res://sprites/mapa_mundo.png" id="3_mn9kp"]
 
 [node name="Principal" type="Node2D" unique_id=74213432]
@@ -10,7 +9,3 @@ script = ExtResource("1_ax3bz")
 [node name="MapaFondo" type="Sprite2D" parent="." unique_id=1540008182]
 position = Vector2(960, 540)
 texture = ExtResource("3_mn9kp")
-
-[node name="Camara" type="Camera2D" parent="." unique_id=1069761487]
-position = Vector2(960, 540)
-script = ExtResource("2_ty7qw")

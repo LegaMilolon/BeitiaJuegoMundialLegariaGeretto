@@ -12,10 +12,14 @@ config_version=5
 
 config/name="juegobeitia"
 run/main_scene="res://escenas/Principal.tscn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

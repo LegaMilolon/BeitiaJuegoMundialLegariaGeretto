@@ -7,20 +7,30 @@ var ALTO = 1080.0
 
 
 func _ready():
+	var tam = get_viewport().get_visible_rect().size
+	var escala_x = tam.x / ANCHO
+	var escala_y = tam.y / ALTO
+
+	var fondo = $MapaFondo
+	fondo.position = tam / 2.0
+	fondo.scale = Vector2(escala_x, escala_y)
+
+	scale = Vector2(escala_x, escala_y)
+
 	cargar_todo()
 
 
 func lon_a_x(lon):
-	return (lon +180.0) / 360.0 *ANCHO
+	return (lon + 180.0) / 360.0 * ANCHO
 
 func lat_a_y(lat):
-	return (90.0 -lat) / 180.0 *ALTO
+	return (90.0 - lat) / 180.0 * ALTO
 
 
 func poligono_mas_grande(lista):
 	var mejor = lista[0]
 	for p in lista:
-		if p.size() >mejor.size():
+		if p.size() > mejor.size():
 			mejor = p
 	return mejor
 
@@ -30,7 +40,7 @@ func cargar_todo():
 	if f == null:
 		printerr("no se pudo abrir paises.json")
 		return
-	var txt =f.get_as_text()
+	var txt = f.get_as_text()
 	f.close()
 	var geo = JSON.parse_string(txt)
 	if geo == null:
